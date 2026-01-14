@@ -1,0 +1,15 @@
+build/
+.cache/
+out/
+bin/
+
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake_install
+Makefile
+
+.DS_Store
+Thumbs.db
+
+.vscode/
+.idea/
