@@ -1,8 +1,15 @@
 #ifndef BALL_H
 #define BALL_H
 
-void updateBall();
+#include "raylib.h"
 
-void drawBall();
+typedef struct Ball Ball;
+
+void updateBall(Ball *ball);
+void drawBall(const Ball *ball);
+void resetBall(Ball *ball);
+Ball *createBall(Vector2 pos, float rad);
+void checkCollisions(Ball *ball, Rectangle *rect);
+void destroyBall(Ball *ball);
 
 #endif
