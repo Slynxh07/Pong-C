@@ -1,11 +1,11 @@
 #include "ball.h"
 
-void update()
+void updateBall()
 {
 
 }
 
-void draw()
+void drawBall()
 {
     
 }

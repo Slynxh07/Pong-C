@@ -1,8 +1,19 @@
 #ifndef PADDLE_H
 #define PADDLE_H
 
-void update();
+#include "raylib.h"
 
-void draw();
+typedef struct Paddle Paddle;
+
+typedef enum Team {
+    LEFT,
+    RIGHT
+} Team;
+
+Paddle *createPaddle(Vector2 pos, Team side);
+void updatePaddle(Paddle *p);
+void drawPaddle(const Paddle *p);
+void destroyPaddle(Paddle* p);
+void resetPaddle(Paddle *p);
 
 #endif

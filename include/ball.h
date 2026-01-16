@@ -1,8 +1,8 @@
 #ifndef BALL_H
 #define BALL_H
 
-void update();
+void updateBall();
 
-void draw();
+void drawBall();
 
 #endif
