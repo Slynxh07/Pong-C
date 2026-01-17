@@ -15,5 +15,6 @@ void updatePaddle(Paddle *p);
 void drawPaddle(const Paddle *p);
 void destroyPaddle(Paddle* p);
 void resetPaddle(Paddle *p);
+Rectangle *getRect(Paddle *p);
 
 #endif

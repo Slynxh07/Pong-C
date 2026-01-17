@@ -60,6 +60,11 @@ void resetPaddle(Paddle *p)
     p->rect.y = p->pos.y;
 }
 
+Rectangle *getRect(Paddle *p)
+{
+    return &p->rect;
+}
+
 void destroyPaddle(Paddle *p)
 {
     free(p);

@@ -41,6 +41,8 @@ void update()
     updatePaddle(p1);
     updatePaddle(p2);
     updateBall(ball);
+    checkPaddleCollisions(ball, getRect(p1));
+    checkPaddleCollisions(ball, getRect(p2));
 }
 
 void draw()
