@@ -11,5 +11,6 @@ void resetBall(Ball *ball);
 Ball *createBall(Vector2 pos, float rad);
 void checkPaddleCollisions(Ball *ball, const Rectangle *rect);
 void destroyBall(Ball *ball);
+int checkGoal(Ball *ball);
 
 #endif

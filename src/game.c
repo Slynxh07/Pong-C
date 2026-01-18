@@ -3,10 +3,11 @@
 #include "ball.h"
 #include "raylib.h"
 
-Paddle *p1;
-Paddle *p2;
+Paddle *p1, *p2;
 Ball *ball;
+unsigned long long score1, score2;
 void restartGame();
+void resetKickOff();
 void update();
 void draw();
 
@@ -21,6 +22,13 @@ void initGame(int windowWidth, int windowHeight, char *title)
 }
 
 void restartGame()
+{
+    score1 = 0;
+    score2 = 0;
+    resetKickOff();
+}
+
+void resetKickOff()
 {
     resetPaddle(p1);
     resetPaddle(p2);
@@ -43,16 +51,32 @@ void update()
     updateBall(ball);
     checkPaddleCollisions(ball, getRect(p1));
     checkPaddleCollisions(ball, getRect(p2));
+    int goal = checkGoal(ball);
+    switch (goal)
+    {
+        case 0:
+            break;
+        case LEFT:
+            score1++;
+            resetKickOff();
+            break;
+        case RIGHT:
+            score2++;
+            resetKickOff();
+            break;
+    }
 }
 
 void draw()
 {
     BeginDrawing();
 
-    ClearBackground(BLACK);
-    drawPaddle(p1);
-    drawPaddle(p2);
-    drawBall(ball);
+        ClearBackground(BLACK);
+        drawPaddle(p1);
+        drawPaddle(p2);
+        drawBall(ball);
+        DrawText(TextFormat("%d", score1), GetScreenWidth() / 4, GetScreenHeight() / 2, 30, WHITE);
+        DrawText(TextFormat("%d", score2), (GetScreenWidth() / 4) * 3, GetScreenHeight() / 2, 30, WHITE);
 
     EndDrawing();
 }

@@ -6,7 +6,7 @@
 typedef struct Paddle Paddle;
 
 typedef enum Team {
-    LEFT,
+    LEFT = 1,
     RIGHT
 } Team;
 

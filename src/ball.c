@@ -35,7 +35,7 @@ void checkPaddleCollisions(Ball *ball, const Rectangle *rect)
         {
             float hitPos = (ball->pos.y - rect->y) / rect->height;
 
-            ball->velocity.y = (hitPos - 0.5f) * 8.0f;
+            ball->velocity.y = (hitPos - 0.5f) * 10.0f;
             ball->velocity.x *= -1;
         }
     }
@@ -64,4 +64,11 @@ Ball *createBall(Vector2 pos, float rad)
 void destroyBall(Ball *ball)
 {
     free(ball);
+}
+
+int checkGoal(Ball *ball)
+{
+    if (ball->pos.x >= GetScreenWidth() - ball->rad) return 1;
+    else if (ball->pos.x <= ball->rad) return 2;
+    return 0;
 }
