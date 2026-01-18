@@ -39,7 +39,7 @@ Paddle *createPaddle(Vector2 pos, Team side)
 {
     Paddle *p = malloc(sizeof(Paddle));
     p->pos = pos;
-    p->rect = (Rectangle){pos.x, pos.y, 20, 120};
+    p->rect = (Rectangle){pos.x, pos.y, 20, 150};
     p->side = side;
     return p;
 }

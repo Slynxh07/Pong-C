@@ -33,12 +33,25 @@ void checkPaddleCollisions(Ball *ball, const Rectangle *rect)
         }
         else
         {
+            if (ball->pos.x >= rect->x) ball->pos.x = rect->x + ball->rad + rect->width;
+            if (ball->pos.x <= rect->x) ball->pos.x = rect->x - ball->rad;
+        
             float hitPos = (ball->pos.y - rect->y) / rect->height;
 
-            ball->velocity.y = (hitPos - 0.5f) * 10.0f;
+            ball->velocity.y = (hitPos - 0.5f) * 20.0f;
             ball->velocity.x *= -1;
         }
     }
+    /*
+    if (CheckCollisionCircleRec(ball->pos, ball->rad, *rect))
+    {
+        if (ball->pos.x >= rect->x) ball->pos.x = rect->x + ball->rad + rect->width;
+        if (ball->pos.x <= rect->x) ball->pos.x = rect->x - ball->rad;
+        ball->velocity.x *= -1;
+        ball->velocity.y *= -1;
+
+    }
+        */
 }
 
 void resetBall(Ball *ball)
