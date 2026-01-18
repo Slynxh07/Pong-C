@@ -4,13 +4,13 @@ Simple pong remake
 
 To build:
 
-'''bash
+```bash
 cd PONG-C
 mkdir build
 cd build
 cmake ..
 cmake --build .
 ./C-PONG
-'''bash
+```
 
 Raylib will be fecthed by cmake if not found in project directory
